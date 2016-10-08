@@ -1,0 +1,62 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Scripts.Render("~/bundles/BasicScripts")
+    @Styles.Render("~/bundles/BasicStyles")
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div>
+        <img src="@Url.Content("~/Images/Header-Logo.png")"/>
+    </div>
+    <hr style="border-top: 1px solid #a59b9b;margin-bottom:0px"/>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Contacts
+                </a>
+            </li>
+            <li>
+                <input type="text" class="form-control"/>
+            </li>
+        </ul>
+</nav>
+<div class="full-screen-container">
+    @RenderBody()
+</div>
+    <footer>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Contacts
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
