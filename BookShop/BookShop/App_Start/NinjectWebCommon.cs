@@ -1,3 +1,4 @@
+using System.Web.Http;
 using System.Web.Mvc;
 using BookShop.Infrastructure;
 
@@ -65,6 +66,7 @@ namespace BookShop.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             DependencyResolver.SetResolver(new NinjectResolver(kernel));
+            GlobalConfiguration.Configuration.DependencyResolver = new Ninject.WebApi.DependencyResolver.NinjectDependencyResolver(kernel);;
         }        
     }
 }

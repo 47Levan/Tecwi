@@ -74,3 +74,5 @@ D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShop\bin\System.Web.Optimizat
 D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShop\bin\WebGrease.dll
 D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShop\bin\Antlr3.Runtime.pdb
 D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShop\bin\System.Web.Optimization.xml
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShop\obj\Debug\BookShop.Migrations.DiscriptionAdded.resources
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShop\bin\Ninject.WebApi.DependencyResolver.dll

@@ -1,0 +1,13 @@
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\BookShopTests.dll.config
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\BookShopTests.dll
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\BookShopTests.pdb
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\Ninject.dll
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\Ninject.Web.Common.dll
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\Ninject.WebApi.DependencyResolver.dll
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\Ninject.xml
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\Ninject.Web.Common.xml
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\obj\Debug\BookShopTests.csprojResolveAssemblyReference.cache
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\obj\Debug\BookShopTests.dll
+D:\Leva\Work\Informatika\CSharp\Tecwi\BookShop\BookShopTests\obj\Debug\BookShopTests.pdb

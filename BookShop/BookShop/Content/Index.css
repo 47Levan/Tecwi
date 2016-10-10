@@ -1,5 +1,37 @@
-﻿.full-screen-container div {
-    background-color: #f7f7f7;
-    border-bottom: solid 2px #ededed;
-    height:100px;
+﻿#indexContainer {
+    min-height: 400px;
+}
+
+    #indexContainer > div:first-of-type {
+        background-color: #f7f7f7;
+        border-bottom: solid 2px #ededed;
+        height: 100px;
+        width: 100%;
+        display: table;
+    }
+
+        #indexContainer > div:first-of-type p {
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+            color: #323603;
+            font: normal 25px "Nixie One";
+        }
+
+#Loading {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+#BooksContainer {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    min-height: 400px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
