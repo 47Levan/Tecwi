@@ -10,8 +10,13 @@ namespace BookShop.App_Start
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "BooksApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "Books/{action}/{filter}",
+                defaults: new
+                {
+                    filter = "",
+                    controller = "UpdateBooksGrid",
+                    action = "PostBooks",
+                }
             );
         }
     }

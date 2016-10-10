@@ -57,7 +57,9 @@ hr {
 .full-screen-container {
     min-height: 400px;
 }
-
+.ui-menu{
+    z-index:1000;
+}
 footer {
     position: relative;
     width: 100%;

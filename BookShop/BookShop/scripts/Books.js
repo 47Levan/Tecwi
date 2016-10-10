@@ -1,4 +1,4 @@
-﻿var opts = {
+﻿var spinOpts = {
     lines: 9,
     length: 27,
     width: 5,
@@ -11,38 +11,69 @@
     speed: 1.9,
     trail: 50,
     zIndex: 2e9,
-    left: '50%',
-    top:'90px',
+    left: '35%',
+    top: '90px',
     position: 'relative'
 };
-$(document).ready(function () {
-    var spinner = new Spinner(opts);
-    $.ajax({
-        url: "/api/UpdateBooksGrid",
-        beforeSend: function () {
+$(document).ready(() => {
+    GetBooks("/Books/PostBooks", null, UpdateGrid);
+});
+$("#SearchBook").on("input", () => {
+    GetBooks("/Books/PostBooks", $("#SearchBook").val(), data => {
+        AutoComplete(data);
+        UpdateGrid(data);
+    });
+});
+function AutoComplete(data) {
+    $("#SearchBook").autocomplete({
+        source: (request, response) => {
+            response($.map(data, (item)=> {
+                return { label: item.Title + " (" + item.Author + ")", value: item.Title }
+            }));
+        },
+        select: (event, element) => {
+            GetBooks("/Books/PostBooks", element.item.value, UpdateGrid);
+        }
+}
+    )};
+function UpdateGrid(data) {
+    var bookCont = $("#BooksContainer");
+    $.each(data, (key, item) => {
+        bookCont.append('<div class="bookCell">'
+            + '<div>'
+            + '<h4 class="title">' + item.Title + "</h4>"
+            + '<p>' + item.Author + "</p>"
+            + "</div>"
+            + '<img src="' + item.Picture + '"/>'
+            + '<div class="decription">' + item.Description + "</div>"
+            + '<a href="' + item.Id + '"><div>READ</div><div>MORE</div></a>'
+            + "</div>");
+        $(".decription").succinct({
+            size: 150
+        });
+        $(".title").succinct({
+            size: 50
+        });
+    });
+
+}
+function GetBooks(url,data,successCallback) {
+    var spinner = new Spinner(spinOpts);
+    return $.ajax({
+        url: url,
+        type: "POST",
+        data: { "": data },
+        beforeSend: () => {
+            $("#BooksContainer").empty();
             $("#Loading").fadeTo("slow", 0.7);
             $("#Loading").after(spinner.spin().el);
         },
-        complete: function () {
+        complete: () => {
             $("#Loading").fadeOut();
             spinner.stop();
         },
-        success: function (data) {
-            var bookCont = $("#BooksContainer");
-            var decriptionHeight = 16*7*1.5;
-            $.each(data, function (key, item) {
-                bookCont.append('<div  style="height:auto;width:200px;margin-left:100px'
-                    + ' ">'
-                    + '<div style="height:100px">'
-                    + '<h4 style="height:60px;overflow:hidden">' + item.Title + "</h4>"
-                    + '<p>' + item.Author + "</p>"
-                    + "</div>"
-                    + '<img style="height:200px;width:150px" src="' + item.Picture + '"/>'
-                    + '<div style="margin-top:25px;overflow:hidden;line-height:1.5; ' 
-                    + '-webkit-line-clamp:7;-webkit-box-orient: vertical;height:' + decriptionHeight + 'px;">'
-                    + item.Description + "</div>"
-                    + "</div>");
-            });
+        success: data => {
+            successCallback(data);
         }
     });
-});
+}

@@ -6,7 +6,7 @@ using BookShop.Models.Repositories;
 
 namespace BookShop.Controllers
 {
-    public class UpdateBooksGridController :ApiController
+    public class UpdateBooksGridController : ApiController
     {
         private IBook _booksRepo;
 
@@ -15,9 +15,29 @@ namespace BookShop.Controllers
         {
             _booksRepo = iBookRepo;
         }
-        public List<Book> GetAllBooks()
+        [HttpPost]
+        public List<Book> PostBooks([FromBody]string filter)
         {
-            return _booksRepo.GetAll();
+            if (filter == null)
+            {
+                return _booksRepo.GetAll();
+            }
+            else
+            {
+                return _booksRepo.GetByFilter(filter);
+            }
+        }
+        [HttpPost]
+        public List<Book> GetBookById(int Id)
+        {
+            if (Id == 0)
+            {
+                return _booksRepo.GetAll();
+            }
+            else
+            {
+                return _booksRepo.GetAll();
+            }
         }
     }
 }

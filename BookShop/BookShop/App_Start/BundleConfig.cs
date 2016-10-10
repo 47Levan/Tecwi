@@ -15,7 +15,7 @@ namespace BookShop.App_Start
                 , "~/Scripts/jquery-ui-1.12.1.min.js"));
             bundleCollection.Add(new StyleBundle("~/bundles/BasicStyles")
            .Include("~/Content/Site.css"
-               , "~/Content/bootstrap.css", "~/Content/PagedList.css"));
+               , "~/Content/bootstrap.css", "~/Content/PagedList.css", "~/Content/themes/base/jquery-ui.min.css"));
         }
     }
 }

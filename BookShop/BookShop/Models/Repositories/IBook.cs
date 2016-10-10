@@ -9,6 +9,7 @@ namespace BookShop.Models.Repositories
         void AddFew(params Book[] book);
         void Remove(Book book);
         Book GetById(int id);
+        List<Book> GetByFilter(string filter);
         List<Book> GetAll();
 
     }

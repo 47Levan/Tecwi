@@ -28,10 +28,78 @@
 
 #BooksContainer {
     display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-column-gap: 50px;
+    grid-template-columns: 200px 200px 200px;
+    grid-column-gap: 80px;
     grid-row-gap: 50px;
     min-height: 400px;
     margin-top: 50px;
     margin-bottom: 100px;
+}
+
+.bookCell {
+    height: auto;
+    width: 200px;
+    margin-left: 100px;
+}
+
+    .bookCell > div:first-child {
+        height: 100px;
+    }
+
+        .bookCell > div:first-child h4 {
+            height: 60px;
+            overflow: hidden;
+        }
+
+    .bookCell img {
+        height: 200px;
+        width: 150px;
+    }
+
+    .bookCell > div:nth-of-type(2) {
+        margin-top: 25px;
+        overflow: hidden;
+        height: 150px;
+        text-align: justify;
+    }
+
+    .bookCell > a {
+        text-decoration: underline;
+        color: white;
+        height: 40px;
+        float: right;
+    }
+
+        .bookCell > a div {
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+            .bookCell > a div:first-child {
+                text-align: center;
+                background-color: #a5b605;
+                font: bold 12px arial;
+                padding-top: 8px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .bookCell > a div:last-child {
+                text-align: center;
+                background-color: #ed8f11;
+                font: bold 12px arial;
+                padding-top: 8px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+#indexContainer > div:nth-of-type(2) {
+    float: right;
+    margin-right:200px;
+    margin-top:100px;
+}
+#indexContainer > div:nth-of-type(2) input{
+    margin-top:20px;
 }

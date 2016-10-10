@@ -33,6 +33,12 @@ namespace BookShop.Models.Repositories
             return _db.Books.FirstOrDefault(x=>x.Id==id);
         }
 
+        public List<Book> GetByFilter(string filter)
+        {
+            return _db.Books
+                .Where(x => x.Author.StartsWith(filter) || x.Title.StartsWith(filter)).ToList();
+        }
+
         public List<Book> GetAll()
         {
             return _db.Books.ToList();
