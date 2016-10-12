@@ -89,13 +89,7 @@ $(document).ready(() => {
 
     GetMap();
 });
-$(".BookHref").on("click", function () {
-    alert("read more clicked");
-    event.preventDefault();
-    $(this).closest("bookCell").find('.decription').animate({
-        height: "+=200px"
-    });
-});
+
 function AutoComplete(data) {
     $("#ContactsHref").autocomplete({
         source: (request, response) => {
@@ -122,7 +116,6 @@ function UpdateGrid(data) {
                 + "</div>"
                 + '<img src="' + item.Picture + '"/>'
                 + '<div class="decription">' + item.Description + "</div>"
-                + '<a class="BookHref" href="' + item.Id + '"><div>READ</div><div>MORE</div></a>'
                 + "</div>");
             $(".decription").succinct({
                 size: 150
