@@ -1,27 +1,30 @@
 ﻿#indexContainer {
-    min-height: 400px;
+    min-height: 500px;
+    width: 1400px;
 }
 
-    #indexContainer > div:first-of-type {
-        background-color: #f7f7f7;
-        border-bottom: solid 2px #ededed;
-        height: 100px;
-        width: 100%;
-        display: table;
-    }
+#preHeader {
+    background-color: #f7f7f7;
+    border-bottom: solid 2px #ededed;
+    height: 100px;
+    width: 100%;
+    min-width: 1200px;
+    display: table;
+}
 
-        #indexContainer > div:first-of-type p {
-            display: table-cell;
-            vertical-align: middle;
-            height: 100%;
-            color: #323603;
-            font: normal 25px "Nixie One";
-        }
+    #preHeader p {
+        display: table-cell;
+        vertical-align: middle;
+        height: 100%;
+        color: #323603;
+        font: normal 25px "Nixie One";
+    }
 
 #Loading {
     position: relative;
     width: 100%;
     text-align: center;
+    height: 200px;
 }
 
 
@@ -31,9 +34,8 @@
     grid-template-columns: 200px 200px 200px;
     grid-column-gap: 80px;
     grid-row-gap: 50px;
-    min-height: 400px;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .bookCell {
@@ -95,11 +97,64 @@
                 border-bottom-left-radius: 0;
             }
 
-#indexContainer > div:nth-of-type(2) {
-    float: right;
-    margin-right:200px;
-    margin-top:100px;
+#About {
+    padding-top: 10px;
+    text-indent: 30px;
 }
-#indexContainer > div:nth-of-type(2) input{
-    margin-top:20px;
+
+#About, #Contacts {
+    text-align: justify;
+    width: 700px;
+    border: solid 1px #cbcfd6;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    margin: 0px 100px 100px;
+}
+
+#Contacts {
+    padding-top: 50px;
+}
+
+    #Contacts #canvas {
+        height: 500px;
+        width: 500px;
+    }
+
+#NoResults {
+    width: 100%;
+    text-align: center;
+}
+
+#AddBook {
+    float: right;
+    margin-right: 150px;
+    margin-top: 8px;
+}
+
+    #AddBook input:focus,
+    #AddBook textarea:focus {
+        border-color: #56c442;
+    }
+
+    #AddBook input.error,
+    #AddBook textarea.error {
+        border-color: #fc4646;
+    }
+
+    #AddBook div {
+        margin-bottom: 20px;
+    }
+
+    #AddBook textarea {
+        resize: none;
+        height: 150px;
+    }
+
+    #AddBook input[type="submit"] {
+        margin-top: 20px;
+    }
+
+#PictureFile {
+    margin-top: 20px;
 }

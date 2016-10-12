@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using BookShop.Models.Entities;
-
+using MoreLinq;
 namespace BookShop.Models.Repositories
 {
-    public class BooksRepository :IBook
+    public class BooksRepository : IBook
     {
         private BooksDbContext _db = new BooksDbContext();
+
+        public BooksRepository()
+        {
+            
+        }
+        public BooksRepository(BooksDbContext context)
+        {
+            _db = context;
+        }
         public void Add(Book book)
         {
             _db.Books.Add(book);
             _db.SaveChanges();
-
         }
         public void AddFew(params Book[] book)
         {
@@ -30,18 +38,27 @@ namespace BookShop.Models.Repositories
 
         public Book GetById(int id)
         {
-            return _db.Books.FirstOrDefault(x=>x.Id==id);
+            return _db.Books.FirstOrDefault(x => x.Id == id);
         }
 
         public List<Book> GetByFilter(string filter)
         {
-            return _db.Books
-                .Where(x => x.Author.StartsWith(filter) || x.Title.StartsWith(filter)).ToList();
+            List<Book> result = new List<Book>();
+            foreach (Book book in _db.Books.ToList())
+            {
+                if (book.Title.Split().Any(x => x.StartsWith(filter)) || book.Title == filter
+                    || book.Author.Split().Any(x => x.StartsWith(filter)) || book.Author == filter)
+                {
+                    result.Add(book);
+                }
+            }
+            return result;
         }
 
         public List<Book> GetAll()
         {
-            return _db.Books.ToList();
+            List<Book> result = _db.Books.ToList();
+            return result;
         }
     }
 }

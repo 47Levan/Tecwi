@@ -12,7 +12,8 @@ namespace BookShop.App_Start
             bundleCollection.Add(new ScriptBundle("~/bundles/BasicScripts")
             .Include("~/Scripts/jquery-3.1.1.min.js"
                 , "~/Scripts/jquery.unobtrusive-ajax.min.js", "~/Scripts/bootstrap.min"
-                , "~/Scripts/jquery-ui-1.12.1.min.js"));
+                , "~/Scripts/jquery-ui-1.12.1.min.js", "~/scripts/spin.js"
+                , "~/scripts/jquery.succinct.min.js", "~/scripts/Books.js", "~/scripts/jquery.validate.min.js"));
             bundleCollection.Add(new StyleBundle("~/bundles/BasicStyles")
            .Include("~/Content/Site.css"
                , "~/Content/bootstrap.css", "~/Content/PagedList.css", "~/Content/themes/base/jquery-ui.min.css"));

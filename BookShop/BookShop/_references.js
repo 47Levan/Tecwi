@@ -4,3 +4,4 @@
 /// <reference path="~/scripts/bootstrap.min.js"/>
 /// <reference path="~/scripts/spin.min.js"/>
 /// <reference path="~/scripts/jQuery.succinct.min.js"/>
+/// <reference path="~/scripts/jquery.validate.min.js"/>

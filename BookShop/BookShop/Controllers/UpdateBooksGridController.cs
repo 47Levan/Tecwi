@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using BookShop.Models.Entities;
 using BookShop.Models.Repositories;
-
+using WebHttpContext = System.Web.HttpContext;
 namespace BookShop.Controllers
 {
     public class UpdateBooksGridController : ApiController
@@ -38,6 +42,42 @@ namespace BookShop.Controllers
             {
                 return _booksRepo.GetAll();
             }
+        }
+        [HttpPost]
+        public async Task<List<Book>> AddBook()
+        {
+
+            if (Request.Content.IsMimeMultipartContent())
+            {
+                Book book = new Book();
+                book.Author = WebHttpContext.Current.Request.Params[0];
+                book.Title = WebHttpContext.Current.Request.Params[1];
+                book.Picture = WebHttpContext.Current.Request.Params[2];
+                book.Description = WebHttpContext.Current.Request.Params[3];
+                HttpPostedFile uploadedFile = null;
+                if (WebHttpContext.Current.Request.Files.Count > 0)
+                {
+                    uploadedFile = WebHttpContext.Current.Request.Files[0];
+                }
+                if (uploadedFile != null)
+                {
+                    string pathToSave = Path.Combine(WebHttpContext.Current.Server
+               .MapPath("~/Images/Books/" + uploadedFile.FileName));
+                    book.Picture = "/Images/Books/" + uploadedFile.FileName;
+                    uploadedFile.SaveAs(pathToSave);
+                }
+
+
+                _booksRepo.Add(book);
+                _booksRepo.GetAll();
+            }
+            else
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotAcceptable, "Invalid Request!"));
+            }
+
+            // _booksRepo.Add(book);
+            return _booksRepo.GetAll();
         }
     }
 }

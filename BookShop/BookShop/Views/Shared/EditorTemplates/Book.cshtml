@@ -1,0 +1,68 @@
+﻿@model BookShop.Models.Entities.Book
+<div>
+    @Html.LabelFor(x => x.Title)
+    @Html.TextBoxFor(x => x.Title, new
+{
+    @id = "TitleInput",
+    @class = "form-control",
+    @type = "text",
+    @required = "required",
+    Name = "TitleInput"
+
+
+})
+    @Html.ValidationMessageFor(x => x.Title)
+</div>
+<div>
+    
+    @Html.LabelFor(x => x.Author)
+    @Html.TextBoxFor(x => x.Author, new
+    {
+        @id = "AuthorInput",
+        @class = "form-control",
+        @type = "text",
+        @required = "required",
+        Name = "AuthorInput"
+    })
+    @Html.ValidationMessageFor(x => x.Author)
+</div>
+
+<div>
+    @Html.LabelFor(x => x.Picture)
+    @Html.TextBoxFor(x => x.Picture, new
+{
+    @id = "PictureUrl",
+    @class = "form-control",
+    @type = "text",
+    @placeholder = "Url or path to storage of picture...",
+    @required = "required",
+    @onchange= "ChangeLoadFile()",
+    Name = "PictureUrl"
+
+})
+    @Html.ValidationMessageFor(x => x.Picture)
+
+    <input id="PictureFile" type="file" onchange="ChangePictTextBox(this)"/>
+</div>
+<div>
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, new
+{
+    @id = "DecriptionInput",
+    @class = "form-control",
+    @type = "text",
+    Name= "DecriptionInput"
+})
+    @Html.ValidationMessageFor(x => x.Description)
+
+</div>
+<script>
+    function ChangePictTextBox(data) {
+        var urlValue = data.value.substr(data.value.lastIndexOf('\\') + 1);
+        $("#PictureUrl").val(urlValue);
+    }
+    function ChangeLoadFile() {
+        $("#PictureFile").wrap('<form>').closest('form').get(0).reset();
+        $("#PictureFile").unwrap();
+    }
+</script>
