@@ -57,20 +57,20 @@ $(document).ready(() => {
     $("#HomeHref,#HomeHrefFooter").on("click", function () {
         event.preventDefault();
         $('html, body').animate({
-            scrollTop: $("#AddBook").offset().top
+            scrollTop: $("#AddBook").offset().top-53
         }, 2000);
     });
     $("#AboutHref,#AboutHrefFooter").on("click", function () {
         event.preventDefault();
         $('html, body').animate({
-            scrollTop: $("#About").offset().top
+            scrollTop: $("#About").offset().top-53
         }, 2000);
     });
 
     $("#ContactsHref,#ContactsHrefFooter").on("click", function () {
         event.preventDefault();
         $('html, body').animate({
-            scrollTop: $("#Contacts").offset().top
+            scrollTop: $("#Contacts").offset().top-53
         }, 2000);
     });
     $(document).scroll(function () {

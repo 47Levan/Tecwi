@@ -1,0 +1,12 @@
+D:\Leva\Work\Informatika\CSharp\Experiments projects\TecwiTest\TecwiTest\bin\Debug\TecwiTest.exe.config
+D:\Leva\Work\Informatika\CSharp\Experiments projects\TecwiTest\TecwiTest\bin\Debug\TecwiTest.exe
+D:\Leva\Work\Informatika\CSharp\Experiments projects\TecwiTest\TecwiTest\bin\Debug\TecwiTest.pdb
+D:\Leva\Work\Informatika\CSharp\Experiments projects\TecwiTest\TecwiTest\obj\Debug\TecwiTest.csprojResolveAssemblyReference.cache
+D:\Leva\Work\Informatika\CSharp\Experiments projects\TecwiTest\TecwiTest\obj\Debug\TecwiTest.exe
+D:\Leva\Work\Informatika\CSharp\Experiments projects\TecwiTest\TecwiTest\obj\Debug\TecwiTest.pdb
+d:\Leva\Work\Informatika\CSharp\Tecwi\TecwiTest\TecwiTest\bin\Debug\TecwiTest.exe.config
+d:\Leva\Work\Informatika\CSharp\Tecwi\TecwiTest\TecwiTest\obj\Debug\TecwiTest.exe
+d:\Leva\Work\Informatika\CSharp\Tecwi\TecwiTest\TecwiTest\obj\Debug\TecwiTest.pdb
+d:\Leva\Work\Informatika\CSharp\Tecwi\TecwiTest\TecwiTest\bin\Debug\TecwiTest.exe
+d:\Leva\Work\Informatika\CSharp\Tecwi\TecwiTest\TecwiTest\bin\Debug\TecwiTest.pdb
+d:\Leva\Work\Informatika\CSharp\Tecwi\TecwiTest\TecwiTest\obj\Debug\TecwiTest.csprojResolveAssemblyReference.cache

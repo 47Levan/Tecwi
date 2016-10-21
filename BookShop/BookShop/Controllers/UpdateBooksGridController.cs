@@ -12,7 +12,7 @@ namespace BookShop.Controllers
 {
     public class UpdateBooksGridController : ApiController
     {
-        private IBook _booksRepo;
+        private readonly IBook _booksRepo;
 
 
         public UpdateBooksGridController(IBook iBookRepo)
@@ -49,11 +49,14 @@ namespace BookShop.Controllers
 
             if (Request.Content.IsMimeMultipartContent())
             {
-                Book book = new Book();
-                book.Author = WebHttpContext.Current.Request.Params[0];
-                book.Title = WebHttpContext.Current.Request.Params[1];
-                book.Picture = WebHttpContext.Current.Request.Params[2];
-                book.Description = WebHttpContext.Current.Request.Params[3];
+                
+                Book book = new Book
+                {
+                    Author = WebHttpContext.Current.Request.Params[0],
+                    Title = WebHttpContext.Current.Request.Params[1],
+                    Picture = WebHttpContext.Current.Request.Params[2],
+                    Description = WebHttpContext.Current.Request.Params[3]
+                };
                 HttpPostedFile uploadedFile = null;
                 if (WebHttpContext.Current.Request.Files.Count > 0)
                 {
