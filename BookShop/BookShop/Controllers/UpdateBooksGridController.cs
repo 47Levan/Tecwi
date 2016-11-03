@@ -22,6 +22,7 @@ namespace BookShop.Controllers
         [HttpPost]
         public List<Book> PostBooks([FromBody]string filter)
         {
+
             if (filter == null)
             {
                 return _booksRepo.GetAll();
@@ -46,7 +47,7 @@ namespace BookShop.Controllers
         [HttpPost]
         public async Task<List<Book>> AddBook()
         {
-
+            
             if (Request.Content.IsMimeMultipartContent())
             {
                 

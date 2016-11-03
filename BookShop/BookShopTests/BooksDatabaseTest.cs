@@ -55,7 +55,7 @@ namespace BookShopTests
         [TestMethod]
         public void GetAllBooks()
         {
-            IQueryable<Book> Books = new List<Book>
+            IQueryable<Book> books = new List<Book>
             {
                 new Book()
                 {
@@ -79,20 +79,20 @@ namespace BookShopTests
                     Description = "Some decription3",
                 }
             }.AsQueryable();
-            MockSet.As<IQueryable<Book>>().Setup(m => m.Provider).Returns(Books.Provider);
-            MockSet.As<IQueryable<Book>>().Setup(m => m.Expression).Returns(Books.Expression);
-            MockSet.As<IQueryable<Book>>().Setup(m => m.ElementType).Returns(Books.ElementType);
-            MockSet.As<IQueryable<Book>>().Setup(m => m.GetEnumerator()).Returns(() => Books.GetEnumerator());
+            MockSet.As<IQueryable<Book>>().Setup(m => m.Provider).Returns(books.Provider);
+            MockSet.As<IQueryable<Book>>().Setup(m => m.Expression).Returns(books.Expression);
+            MockSet.As<IQueryable<Book>>().Setup(m => m.ElementType).Returns(books.ElementType);
+            MockSet.As<IQueryable<Book>>().Setup(m => m.GetEnumerator()).Returns(() => books.GetEnumerator());
             MockContext.Setup(x => x.Books).Returns(MockSet.Object);
             BooksRepository repo = new BooksRepository(MockContext.Object);
 
             List<Book> result = repo.GetAll();
             for (int i = 0; i < 3; i++)
             {
-                Assert.AreEqual(Books.ToList()[i].Title, result[i].Title);
-                Assert.AreEqual(Books.ToList()[i].Author, result[i].Author);
-                Assert.AreEqual(Books.ToList()[i].Description, result[i].Description);
-                Assert.AreEqual(Books.ToList()[i].Picture, result[i].Picture);
+                Assert.AreEqual(books.ToList()[i].Title, result[i].Title);
+                Assert.AreEqual(books.ToList()[i].Author, result[i].Author);
+                Assert.AreEqual(books.ToList()[i].Description, result[i].Description);
+                Assert.AreEqual(books.ToList()[i].Picture, result[i].Picture);
             }
         }
 

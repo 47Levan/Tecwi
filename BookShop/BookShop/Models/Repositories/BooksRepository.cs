@@ -44,7 +44,7 @@ namespace BookShop.Models.Repositories
         public List<Book> GetByFilter(string filter)
         {
             List<Book> result = new List<Book>();
-            foreach (Book book in _db.Books.ToList())
+            foreach (Book book in _db.Books)
             {
                 if (book.Title.Split().Any(x => x.StartsWith(filter)) || book.Title == filter
                     || book.Author.Split().Any(x => x.StartsWith(filter)) || book.Author == filter)
